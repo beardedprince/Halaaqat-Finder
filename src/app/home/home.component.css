@@ -1,0 +1,10 @@
+.location{
+    position: absolute;
+    top:0;
+    right:0;
+   border-radius: 0px 0.25rem 0px 0px
+}
+
+.card{
+    border-left:4px solid #17a2b8 !important;
+}

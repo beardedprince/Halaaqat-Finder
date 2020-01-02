@@ -11,8 +11,9 @@ export class HomeComponent implements OnInit {
   constructor( private data: HalqahService) { }
 
   ngOnInit() {
-    this.data.getHalaqaat().subscribe(data => {
-        this.halqahList = data;
+    this.data.getHalaqaat().subscribe(result => {
+        this.halqahList = result;
+        console.log(result);
       }
     );
   }

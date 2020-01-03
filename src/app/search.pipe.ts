@@ -5,15 +5,34 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(items: any[], searchText: string, label: string): any[] {
-    if (!items) {
+  transform(value: any[], input: string) {
+    if (!value) {
       return [];
     }
-    if (!searchText) {
-      return items;
+    if (!input) {
+      return value;
     }
-    if (searchText === '' || items === null) { return []; }
-    return items.filter(e => e[label].toLowerCase().indexOf(searchText) > -1 );
+    let valuesArr = [];
+    if (input) {
+      console.log(input);
+      input = input.toLowerCase();
+      return value.filter( (el: any) => {
+        valuesArr = Object.keys(el).map(key => el[key]);
+        return valuesArr.some((elm) => {
+           if (JSON.stringify(elm).includes(input)) {
+             return elm;
+           }
+           return null;
+        });
+      });
+    }
+    return value;
   }
+    // if (searchText === '' || items === null) { return items; }
+    // // tslint:disable-next-line:no-shadowed-variable
+    // return items.filter((items) => items;
+    // console.log(items);
+    // return items.filter(e => e[label].toLowerCase().indexOf(searchText.toLowerCase()) !== -1 );
+  // }
 
 }

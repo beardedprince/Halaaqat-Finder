@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="container">
-  <!-- <input type="text" [(ngModel)]="result"> -->
+  <input class="form-control mr-sm-2 col-md-6 searchBar" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="result">
   <div class="row mt-3">
     <div class="col-md-6 " *ngFor="let list of halqahList | search:result ">
       <div class="card my-2 border rounded shadow-sm bg-default">

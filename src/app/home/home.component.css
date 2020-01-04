@@ -8,3 +8,11 @@
 .card{
     border-left:4px solid #17a2b8 !important;
 }
+
+.card:hover{
+    box-shadow:0px 2px 5px rgba(0, 0, 0, .5) !important;
+}
+
+.state{
+    color:#f4f4f4;
+}

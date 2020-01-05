@@ -9,6 +9,8 @@ import * as AOS from 'aos';
 export class AppComponent implements OnInit {
   title = 'halaqaat-finder';
   ngOnInit() {
-    AOS.init();
+    // AOS.init({
+    //   duration: 500
+    // });
   }
 }

@@ -8,8 +8,12 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  // tslint:disable-next-line:no-inferrable-types
+  p: number = 1;
+  collection: any[] ;
   halqahList: object;
-  constructor( private data: HalqahService, private title: Title, private meta: Meta) { }
+  constructor( private data: HalqahService, private title: Title, private meta: Meta) {  }
+
 
   ngOnInit() {
     // page title and meta tags

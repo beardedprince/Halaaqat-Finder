@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     ]);
 
     // Service
-    this.data.getHalaqaat().subscribe(result => {
+    this.data.getHalaqaatLocal().subscribe(result => {
         this.halqahList = result;
         console.log(result);
       }

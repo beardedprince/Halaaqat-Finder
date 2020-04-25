@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row" *ngFor = "let feedback of feedbackList">
+    <div class="col-md-6 ">
+      <div class="card mb-3">
+        <div class="card-header">
+          <span>Feedback from: </span>  <b>{{feedback.name}}</b>
+        </div>
+        <div class="card-body">
+         <p>  Email: <span>{{feedback.email}}</span></p> 
+          <p> Message: <span>{{feedback.message}} </span></p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

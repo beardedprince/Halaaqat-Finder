@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchPipe } from './search.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SearchPipe } from './search.pipe';
     ContactComponent,
     FooterComponent,
     HeaderComponent,
-    SearchPipe
+    SearchPipe,
+    AdminComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

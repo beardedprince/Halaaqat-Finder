@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  path: 'http://localhost:3000/api'
+  path: 'https://halaqaah-backend.herokuapp.com/api'
 };

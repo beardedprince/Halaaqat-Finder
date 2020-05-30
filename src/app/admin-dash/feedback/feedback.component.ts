@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HalqahService } from '../halqah.service';
+import { HalqahService } from '../../halqah.service';
 
 @Component({
   selector: 'app-feedback',

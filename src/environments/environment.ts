@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  path: 'https://halaqaah-backend.herokuapp.com/api'
+  // path: 'https://halaqaah-backend.herokuapp.com/api',
+  path: 'http://localhost:3000/api'
 };
 
 /*

@@ -1,0 +1,38 @@
+<div class="container">
+    <h3 class="mt-3">Welcome! username</h3>
+    <div class="row">
+      
+      <div class="col-md-3 ">
+          <ul class="list-group flush-right">
+              <li class="list-group-item" [routerLink]="['/admin', 'dashboard']"> Dashboard</li>
+              <li class="list-group-item" [routerLink]="['/admin', 'new-post']"> Add new</li>
+              <li class="list-group-item" [routerLink]="['/admin', 'feedback']"> Feedback</li>
+              
+            </ul>
+  
+      </div>
+  
+      <div class="col-md-8 offset-md-1">
+          <div class="row" *ngFor = "let feedback of feedbackList" >
+              <div class="col-md-12 ">
+                <div class="card mb-3">
+                  <div class="card-header">
+                    <span>Feedback from: </span>  <b>{{feedback.name}}</b>
+                  </div>
+                  <div class="card-body">
+                   <p>  Email: <span>{{feedback.email}}</span></p> 
+                    <p> Message: <span>{{feedback.message}} </span></p> 
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+  
+  
+    </div>
+  </div>
+  <footer class="text-center mt-4 pb-2 border-top bg-default">
+    <p class="pt-2 m-0"> Halaqaat-Finder &copy; 2020 </p>
+  </footer>
+
+

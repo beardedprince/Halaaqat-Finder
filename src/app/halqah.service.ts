@@ -7,7 +7,7 @@ import {environment } from '../environments/environment';
 })
 export class HalqahService {
 
-  
+
   private path = environment.path;
 
 
@@ -20,6 +20,11 @@ export class HalqahService {
 
   getHalaqaatLocal() {
     return this.http.get( this.path + '/halaqaat');
+  }
+
+  deleteHalqah(id) {
+    const url = `${this.path + '/halaqaat'}/${id}`;
+    return this.http.delete( url, id);
   }
 
   sendFeedBack(feedBackForm) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
-import { HalqahService } from '../halqah.service';
+import { HalqahService } from '../../halqah.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -12,7 +13,7 @@ export class AdminComponent implements OnInit {
   postHalaqaat: FormGroup;
   success = false;
   submitted = false;
-  constructor(private fb: FormBuilder, private data: HalqahService) {
+  constructor(private fb: FormBuilder, private data: HalqahService, private router: Router) {
     this.postHalaqaat = this.fb.group({
       state: ['', Validators.required],
       teacher: ['', Validators.required],
@@ -26,17 +27,18 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   posthalaqahForm() {
     this.submitted = true;
     if (this.postHalaqaat.invalid) {
        return;
      } else {
-       this.success = true;
+       this.data.postHalqah(this.postHalaqaat.value).subscribe( data => {
+           this.success = true;
+           this.router.navigate(['/admin', 'dashboard']);
+           this.success = false;
+       });
      }
-    this.data.postHalqah(this.postHalaqaat.value).subscribe( data => {
-      console.log(data);
-
-    });
   }
 
 }

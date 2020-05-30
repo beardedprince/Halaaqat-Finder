@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="d-flex mb-2">
+      <h3 class="my-3">Welcome! {{admin?.email}}</h3>
+      <h3 class=" ml-auto my-3"  (click)="logoutAdmin()"> <i class="fas fa-sign-out-alt"></i> Logout</h3>
+    </div>
+    <div class="row">
+      
+      <div class="col-md-3 ">
+        <ul class="list-group flush-right">
+            <li class="list-group-item" [routerLink]="['/admin', 'dashboard']"> Dashboard</li>
+            <li class="list-group-item" [routerLink]="['/admin', 'new-post']"> Add new</li>
+            <li class="list-group-item" [routerLink]="['/admin', 'feedback']"> Feedback</li>
+            
+          </ul>
+  
+      </div>
+  
+      <div class="col-md-8 offset-md-1">
+
+          <div class="row" >
+              <table class="table table-hover table-responsive"  >
+                  <thead>
+                    <tr>
+                      <th scope="col">S/N</th>
+                      <th scope="col">Teacher</th>
+                      <th scope="col">Book</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Action</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let list of halaqahList; let i = index">
+                      <th scope="row">{{i + 1}}</th>
+                      <td>{{list.teacher}}</td>
+                      <td>{{list.book}}</td>
+                      <td>{{list.time}}</td>
+                      <td>
+                        <button class="btn btn-info btn-sm mb-1">Edit</button>
+                        <button class="btn btn-danger btn-sm"(click)="deleteHalaqah(list._id)" >Delete</button>
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+          </div>
+
+          
+            
+        </div>
+  
+  
+    </div>
+  </div>
+  <footer class="text-center mt-4 pb-2 border-top bg-default">
+    <p class="pt-2 m-0"> Halaqaat-Finder &copy; 2020 </p>
+  </footer>

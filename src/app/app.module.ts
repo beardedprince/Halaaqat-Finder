@@ -7,6 +7,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,8 +15,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchPipe } from './search.pipe';
-import { AdminComponent } from './admin/admin.component';
-import { FeedbackComponent } from './feedback/feedback.component';
+import { HalqahService } from './halqah.service';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,6 @@ import { FeedbackComponent } from './feedback/feedback.component';
     FooterComponent,
     HeaderComponent,
     SearchPipe,
-    AdminComponent,
-    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +33,10 @@ import { FeedbackComponent } from './feedback/feedback.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
 
   ],
-  providers: [],
+  providers: [HalqahService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

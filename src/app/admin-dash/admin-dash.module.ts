@@ -11,6 +11,7 @@ import { FrontviewComponent } from './frontview/frontview.component';
 
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditHalqahComponent } from './edit-halqah/edit-halqah.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FeedbackComponent,
     LoginComponent,
     RegisterComponent,
-    FrontviewComponent
+    FrontviewComponent,
+    EditHalqahComponent
   ],
   imports: [
     CommonModule,
@@ -27,9 +29,10 @@ import { ReactiveFormsModule } from '@angular/forms';
       {path: '', pathMatch: 'full', redirectTo: 'login'},
       { path: 'login', component: LoginComponent },
       {path: 'register', component: RegisterComponent },
-      {path: 'new-post', component: AdminComponent },
+      {path: 'new-halaqah', component: AdminComponent },
       {path: 'dashboard', component: FrontviewComponent },
       {path: 'feedback', component: FeedbackComponent },
+      {path: 'edit-halaqah/:id', component: EditHalqahComponent },
 
     ])
   ],
@@ -38,7 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FeedbackComponent,
     LoginComponent,
     RegisterComponent,
-    FrontviewComponent
+    FrontviewComponent,
+    EditHalqahComponent
   ]
 })
 export class AdminDashModule { }

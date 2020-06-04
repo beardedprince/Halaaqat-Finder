@@ -22,11 +22,20 @@ export class HalqahService {
     return this.http.get( this.path + '/halaqaat');
   }
 
-  deleteHalqah(id) {
+  getSingleHalaqahByID(id) {
     const url = `${this.path + '/halaqaat'}/${id}`;
-    return this.http.delete( url, id);
+    return this.http.get( url, id);
   }
 
+  editHalqah(id: any, editHalaqaatForm) {
+    const url = `${this.path + '/halaqaat'}/${id}`;
+    return this.http.put( url, editHalaqaatForm);
+  }
+
+  deleteHalqah(id) {
+    const url = `${this.path + '/halaqaat'}/${id}`;
+    return this.http.delete( url);
+  }
   sendFeedBack(feedBackForm) {
     return this.http.post( this.path + '/contact', feedBackForm);
   }
